@@ -1,11 +1,23 @@
 /* common */
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 ul,
 li,
 a {
   list-style: none;
   text-decoration: none;
   font-style: normal;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
@@ -16,6 +28,9 @@ a {
   --background-white: #ffffff;
   --grey-portfolio: #f5f4fa;
   --grey-other: #2f303a;
+  --button-hero: #188ce8;
+  --button-hero-fon: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  --footer-accent: #c5c2c2;
 }
 
 body {
@@ -33,23 +48,68 @@ body {
   margin: -1px;
   border: 0;
   padding: 0;
-
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
 
+.feature-list {
+  padding-top: 94px;
+  display: flex;
+  gap: 30px;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* outline: 2px solid tomato;
+  outline-offset: -2px;*/
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /* header nav */
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-list {
+  display: flex;
+}
 
 .header-logo {
   color: var(--accent-color);
   font-family: Raleway;
-
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-right: 93px;
+}
+
+.header-item {
+  margin-left: 40px;
+}
+
+.header-item:last-child {
+  margin-right: 0;
+}
+
+.header-nav {
+  margin-right: auto;
 }
 
 .black {
@@ -58,11 +118,17 @@ body {
 
 .header-contakt {
   color: var(--background-grey);
-
   font-weight: 500;
   font-size: 14px;
   line-height: 1.15;
   letter-spacing: 0.02em;
+  margin-right: 50px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.header-contakt:last-child {
+  margin-right: 0;
 }
 
 .header-contakt:hover,
@@ -77,6 +143,12 @@ body {
   letter-spacing: 0.02em;
 }
 
+.header-link {
+  color: var(--primary-color);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
 .header-item .header-link:hover,
 .header-item .header-link:focus {
   color: var(--accent-color);
@@ -86,21 +158,37 @@ body {
   color: var(--accent-color);
 }
 
+.header-list {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /* herro */
 
 .main-title {
   color: var(--background-white);
-
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  width: 696px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
 }
 
 .hero {
   background-color: var(--grey-other);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .hero-button {
@@ -117,12 +205,18 @@ body {
   letter-spacing: 0.06em;
   font-family: Roboto, sans-serif;
   cursor: pointer;
+  display: inline-block;
+  min-width: 200px;
+  min-height: 40px;
+  max-width: 260px;
+  padding: 10px, 32px;
+  margin-bottom: 200px;
 }
 
 .hero-button:hover,
 .hero-button:focus {
-  background: #188ce8;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background: var(--button-hero);
+  box-shadow: var(--button-hero-fon);
 }
 
 /* section */
@@ -133,6 +227,11 @@ body {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
+  padding-top: 94px;
+}
+
+.feature-item {
+  flex-basis: 270px;
 }
 
 .feature-up {
@@ -140,12 +239,26 @@ body {
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .feature-down {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.what-list {
+  padding-top: 50px;
+}
+
+.what-list {
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 .name {
@@ -167,6 +280,32 @@ body {
 
 .team {
   background-color: var(--grey-portfolio);
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.team-item {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  background-color: var(--background-white);
+  height: 368px;
+}
+
+.team-list {
+  display: flex;
+  gap: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.name {
+  margin-top: 30px;
+}
+
+.jobs {
+  margin-top: 10px;
 }
 
 /* footer */
@@ -178,10 +317,10 @@ body {
 .footer-logo {
   color: var(--accent-color);
   font-family: Raleway;
-
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
+  padding-top: 60px;
 }
 
 .white,
@@ -195,23 +334,37 @@ body {
   line-height: 1.5;
 }
 
+.map-address:hover,
+.map-address:focus {
+  color: var(--footer-accent);
+}
+
 .footer-contakt {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
+  margin-top: 9px;
 }
 
 .footer-contakt:hover,
 .footer-contakt:focus {
-  color: var(--background-white);
+  color: var(--footer-accent);
+}
+
+.footer-down {
+  margin-top: 20px;
+}
+
+.footer-container {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 /* section portfolio */
 
 .filters-button {
   background-color: var(--grey-portfolio);
-
   font-weight: 500;
   font-size: 16px;
   line-height: 1.63;
@@ -219,6 +372,17 @@ body {
   border: none;
   cursor: pointer;
   font-family: Roboto, sans-serif;
+  letter-spacing: 0.03em;
+  padding: 6px 22px;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.filters-list {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
 .filters-button:hover,
@@ -229,17 +393,47 @@ body {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
+.filters-list {
+  padding-top: 94px;
+}
+
+.filters-item {
+  align-items: center;
+  width: 404 px;
+}
+
+.project-list {
+  margin-top: 50px;
+  display: flex;
+  gap: 30px;
+  padding-bottom: 50px;
+  letter-spacing: 0.03em;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
 .brends {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  padding-top: 20px;
 }
 
 .direccion {
   color: var(--background-grey);
-
-  font-weight: 400;
   font-size: 16px;
   line-height: 1.9;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+.header-container {
+  border-bottom: 1px solid rgba(236, 236, 236, 1);
+}
+
+.portfolio-title {
+  border: 1px solid rgba(238, 238, 238, 1);
+  border-top: none;
+  padding-left: 24px;
 }
