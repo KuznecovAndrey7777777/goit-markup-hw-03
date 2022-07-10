@@ -413,6 +413,10 @@ p {
   text-align: left;
 }
 
+.project-img.no-gap {
+  display: block;
+}
+
 .brends {
   font-weight: 700;
   font-size: 18px;
