@@ -197,6 +197,7 @@ p {
   cursor: pointer;
   display: inline-block;
   min-width: 200px;
+  padding: 10px 32px;
 }
 
 .hero-button:hover,
